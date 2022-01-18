@@ -4,17 +4,18 @@
     <div class="display">{{ response }}</div>
     <!--display-->
 
-    <div @click="percent" class="percent button">%</div>
-    <div @click="clear" class="clear button">Clear</div>
+  
     <div @click="append(n)" class="button" v-for="n in keys" :key="n" >{{n}}</div>
-   
     
-    <div @click="multiply" class="button">x</div>
+    <div @click="multiply"  class="mult">x</div>
     <div @click="minus" class="button">-</div>
-    <div @click="plus" class="button">+</div>
+    <div @click="plus" class="plus">+</div>
     <div @click="divide" class="button">/</div>
     <div @click="dot" class="button">.</div>
-    <div @click="equal" class="button">=</div>
+    <div @click="equal" class="eq">=</div>
+    <div @click="percent" class="percent button">%</div>
+    <div @click="clear" class="clear button">C</div>
+    
   </div>
 </template>
 
@@ -109,14 +110,31 @@ export default {
   text-align: right;
   grid-column: 1/5; /*with this the display will take up 4 columns (1 start, 5 end)*/
 }
-.percent {
-  grid-column: 1/3;
+.plus {
+  grid-column: 4/5;
+  grid-row: 2/4;
+  text-align: center;
+  background-color: #4e5e83;
+  border: 2px solid #000000;
 }
 .clear {
-  grid-column: 3/5;
+  grid-row: 4/6;
+  grid-column: 4/5;
+}
+.mult {
+  grid-row: 5/6;
+  grid-column: 1/2;
+  background-color: #4e5e83;
+  border: 2px solid #000000;
 }
 .button {
   background-color: #4e5e83;
   border: 2px solid #000000;
+}
+.eq {
+  background-color: #4e5e83;
+  border: 2px solid #000000;
+  grid-row: 6/6;
+  grid-column: 4/5;
 }
 </style>
